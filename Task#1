@@ -1,0 +1,6 @@
+from random import choice
+answers = ['Всехорошо.', 'Все отлично :)', 'Ну так средне', 'Супер!', 'Да ничего, все будет хорошо']
+def how_are_you():
+    answer = choice(answers)
+    return answer
+print(how_are_you())
