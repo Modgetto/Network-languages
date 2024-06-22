@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Товары на складе</title>
+    <link rel="stylesheet" href="C:\Users\vladp\Desktop\Lab#10\Task#4\Source\css\style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Товары на складе</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Описание</th>
+                    <th>Вес 1 единицы</th>
+                    <th>Количество</th>
+                    <th>Цена поставщика</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in inventory %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.weight }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('add_item') }}" class="btn">Добавить товар</a>
+    </div>
+</body>
+</html>
