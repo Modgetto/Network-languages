@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ note.title }}{% endblock %}
+
+{% block content %}
+    <h1 class="mt-4">{{ note.title }}</h1>
+    <p>{{ note.description }}</p>
+    <div>{{ note.content }}</div>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-4">Back to Notes</a>
+    <a href="{{ url_for('delete_note', note_id=note.id) }}" class="btn btn-danger mt-4">Delete Note</a>
+{% endblock %}

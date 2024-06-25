@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач</title>
+</head>
+<body>
+    <h1>Список задач</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_task') }}">Добавить задачу</a>
+</body>
+</html>

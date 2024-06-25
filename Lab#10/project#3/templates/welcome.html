@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1>Welcome, {{ session.username }}</h1>
+    {% if role == 'admin' %}
+      <p>As an Admin, you have full access to the system.</p>
+      <a href="{{ url_for('admin') }}">Admin Page</a>
+    {% elif role == 'moderator' %}
+      <p>As a Moderator, you can edit records and comments.</p>
+      <a href="{{ url_for('moderator') }}">Moderator Page</a>
+    {% elif role == 'user' %}
+      <p>As a User, you can create records and view the friend feed.</p>
+      <a href="{{ url_for('user') }}">User Page</a>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </body>
+</html>

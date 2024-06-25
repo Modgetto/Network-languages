@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Товары на складе</h1>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Описание</th>
+                    <th>Вес 1 единицы</th>
+                    <th>Количество</th>
+                    <th>Цена поставщика</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.weight }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('add_product') }}" class="btn btn-primary">Добавить товар</a>
+    </div>
+</body>
+</html>
